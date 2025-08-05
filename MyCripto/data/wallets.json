@@ -1,0 +1,102 @@
+{
+    "Alice": {
+        "private_key": "c41f311c4a2169da056a25f570896f3c55bd1e0d0cb3d31d75d417d0f65be70c",
+        "public_key": "13d7f2790cc4a4985e8821f50ef465f3a19300b9e48e64608615ee497f39f6ad851c4f3b01d1da546aab714e6d8194e4acfe11b938a0b455f150daab6ea3748d",
+        "balance": 99.99
+    },
+    "Bob": {
+        "private_key": "c5657b90340a5bcd24711b5c4f77be1d5728bbd3f97ad87b1a1c43a78df285d5",
+        "public_key": "3d1397f133f1aaae4fc8bf10152b328bff25c74e439bcf06190e9b33b82339f68c6536942b0d36c135579c3ae24fced1920e891df1b42ec6aec1dbed5ad7e32b",
+        "balance": 100
+    },
+    "David": {
+        "private_key": "5c2168ee919492194c2918906ec6a03b517845136f24d7034fcf33b8d950a0f1",
+        "public_key": "13494680285c92f41d48df16b2a1a605918923a740c762e0efa541597244a3a19f535dca2a6eb3a6e140958b88853f0aa28181fc939e8942c040855ad71db0df",
+        "balance": 100
+    },
+    "Daki": {
+        "private_key": "2ce0af5874b6082bf0e648533b5387844ad20d58b21ce969d14d1c4c42f9acec",
+        "public_key": "4a8fe7be007a084128348dbacf7db95a17e858e68815f8359444db30347eb2a12a8179ca59525e79c8f0b9a74dc0163019d4501b95c88926021d8fc2143306d2",
+        "balance": 94.95
+    },
+    "Dakisa": {
+        "private_key": "a3d0a056d4cedb7c47fcd159870ca436d632ada7ec3f724ed4c0a47baae03453",
+        "public_key": "6acad9b1fa3adca81cf91343749cd4f31236653d54f11516fad01d9ca884f79e4145c79974eeeeb6ed1b7511413fe9141b1cf22c7d7abe8f6439eb5d930206fc",
+        "balance": 100
+    },
+    "dakkisa": {
+        "private_key": "014010a7deed18816c056e4471c6a537baa6fc4c314caf7992320c1fa012eaf6",
+        "public_key": "862608622360b9e5d6064f7e5413cd6e8e340b670d4add2fc1e15593acdb373051e63736b357e08c8902da03abd6044d94df449eb6cb8587d211f0f933993af3",
+        "balance": 95.0
+    },
+    "Dada": {
+        "private_key": "1aa5e8801b158f31536d16f83e003b2ba2aeb1ef46fe0f93f9cd7d59f2615ad7",
+        "public_key": "9efc8355884381dcf1a8e083e86616ee915151c62997146ebc2883aaec9b8272649e6ba2f45f743782caf25775543e0de02bc53f07af11106b6fc7be9c57804c",
+        "balance": 100
+    },
+    "Dado": {
+        "private_key": "29f3971dcfc4d918498a42d8aa582dd993f9109a9eefa1aa040a96621c81fad3",
+        "public_key": "b602c6edb05d8fb239d68f4954e445e9df9d3468cd1a2d6219c894f4750c462b2bf7e7f04ca10afd8a5f252883d01bd485764b8e9a702fe38d72959ace4ce7eb",
+        "balance": 100
+    },
+    "Test": {
+        "private_key": "9feb7bae3831d09ecb37d2e3dc4aa732181cb3fca9d49a693728bde53ece7e88",
+        "public_key": "7b141abefaf1e782380e7717f7b702ea75b89f4105e33ef0959e15d7f404aa30ab57165518dd0c4581542663b48a0061f8188feb19d28046190cd343d43e6c32",
+        "balance": 100
+    },
+    "Testic": {
+        "private_key": "527b8d014b88d78cbae1eabcb7b13f8fdab33eec01ed5f3135ff4a08a5f4f281",
+        "public_key": "7a827af4e8dbec74ff419573aa0db8f9a05f6c9283affb75770b837129a55db645648aa61d27dbdf59ed0ebc5762a87160610ed6d62879de826865532fcb74ce",
+        "balance": 100
+    },
+    "Dbr": {
+        "private_key": "3446270d5fbc20b7745bf15af20ae3fd6e0018c45e68d23ab9c7bc08756a2e34",
+        "public_key": "02354d85f8ac6eb798bdbc93c74d100215cdcf3ba7b7dab64decc1d97932438b15489046779d070fefe233a68702b55ad40bcf486db886bd7f21e25ff43ebec3",
+        "balance": 100
+    },
+    "Sta znam": {
+        "private_key": "58d0ca6e0dfa9d1d2c8eee3859e4899e4db597750c974e12a153585606cb677e",
+        "public_key": "41d2bc22a7fef1f03c53e44f0b8533cec789a3e700c8d9445efdff89b58f54ef72e7ddd6b9945250997a567738b7415be95d4337929ba663d61bf15a05ad89ab",
+        "balance": 100
+    },
+    "Ok": {
+        "private_key": "27b0407c495a5ad62cd57868da4fa1f5b416f60229e498e46a8a91bcc2196e68",
+        "public_key": "9be7dbf6644d4e0783543a039e73773692d614707e89ffc3a17641900605b33c7c850f70863ac427139ec61011fe1806ae93937d0ff88bd0f2dbcdeefcf5675d",
+        "balance": 100
+    },
+    "david": {
+        "private_key": "b9fac8beebc7c8c8eb9ff5f10d7ca33cb59224bb8a32227b19d7a013b0b4ae87",
+        "public_key": "16258940a570b4108563101aeb857c81b532817358e33933d12929c63b99d53fafe105bdb86371132602d2762951a2a9f7edbc20e99bc95e80135c0a670a23cc",
+        "balance": 100
+    },
+    "komsija": {
+        "private_key": "ca5f2cc3acac8d0c0e23563d37ff3ad361fdac2a827cfa252549c3591423dc4c",
+        "public_key": "50e89847a6815df6a97b808109a9c71d4740e838cc112736ce75136c3213fcb8efde91bb579d88b5a91c2018a3ff0efedef9f51347de9a4098df941a622f547e",
+        "balance": 100
+    },
+    "lol": {
+        "private_key": "52b721f5867863926bb158f10fbfbedf8b457479723e7e9fb6f612c33dafde49",
+        "public_key": "e786abe28de28fc2d7bdb962a8c2d680e4f27edf60d75996dea14097e7feee75a7fbb6c3d9c65732d09ac0b1323c360d8e17453064a283e2245cc772854ba48c",
+        "balance": 100
+    },
+    "Lol": {
+        "private_key": "727370663b7c9a28021feed46a083767c2563efd3d256eadbe48b3c0698de891",
+        "public_key": "bb6a94c0cdfb95837d83c70b3ac90d4d39de3a4495a8a8378840e753984f612f2e95fb04a5ea76392411dd38826abbbbaf4d6f01631e7df8af3ee49a10af17fa",
+        "balance": 100
+    },
+    "Komso": {
+        "private_key": "3ef4e2a2c2f1bfaaa49a29046b61b0f378d46d6b20d5d7f5b5cb2a4e9dcf9af3",
+        "public_key": "b7f351b8014d15ce3ad0d31561bf35cf9137fe981f2c1f88bb303e24e365ccb413a2cf66f22df45a19c45d99a7b30faf47936b9fd1505d38b7c27301d14a7e2a",
+        "balance": 100
+    },
+    "4a8fe7be007a084128348dbacf7db95a17e858e68815f8359444db30347eb2a12a8179ca59525e79c8f0b9a74dc0163019d4501b95c88926021d8fc2143306d2": {
+        "private_key": "276c7f3dfd5110124053aae958ea706ff59e2c05d07c21034429073136b630c2",
+        "public_key": "3132a0632b45e59ddb608a62e8cdf330a62e5c5d244fb67dc9161133e4d8d7e82fe4d3c3af00af3fe07ce2298a8733b6b82e1609f40fcfae5e0b0383288a4024",
+        "balance": 100
+    },
+    "Komsija": {
+        "private_key": "9b9eb08b7cf8e1ca9ab9fb1ff836ecf9f833426dd5d1f2163691cf790fc58c22",
+        "public_key": "95c2834f323bb4280a75bbb5e1bb757fa678a299126ace11907b585f1676ce1ad339c364586d1a5aa7f9c2e0e307d2f17513ef09edc0415ada8b0746e87349a5",
+        "balance": 100
+    }
+}
