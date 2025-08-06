@@ -29,7 +29,7 @@ MineByte (MB) is a lightweight, educational cryptocurrency project implemented i
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/minebyte.git
+   git clone https://github.com/Zypher0903/minebyte.git
    cd minebyte
 (Optional) Create and activate a virtual environment:
 
