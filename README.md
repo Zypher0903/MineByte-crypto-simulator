@@ -8,13 +8,13 @@ MineByte converter: https://bright-elf-2fde17.netlify.app/
 
 ## 🚀 Features
 
-- 🔐 **Wallet Management** — Create and load wallets with public/private key pairs.
-- 🔁 **Transactions** — Send MB coins securely with cryptographic signatures.
-- ⛓️ **Blockchain** — Immutable, persistent blockchain stored as JSON.
-- ⚒️ **Mining** — Proof-of-work mining with adjustable difficulty.
-- 🧾 **Mempool** — Pool of pending transactions awaiting confirmation.
-- ⏱️ **Multiple Mining Modes** — Fast mining (instant nonce solving) and real-time mining.
-- 💵 **Balance Checking** — Query wallet balances based on blockchain history.
+- 🔐 **Wallet Management** — Create and load wallets with public/private key pairs.  
+- 🔁 **Transactions** — Send MB coins securely with cryptographic signatures.  
+- ⛓️ **Blockchain** — Immutable, persistent blockchain stored as JSON.  
+- ⚒️ **Mining** — Proof-of-work mining with adjustable difficulty.  
+- 🧾 **Mempool** — Pool of pending transactions awaiting confirmation.  
+- ⏱️ **Multiple Mining Modes** — Fast mining (instant nonce solving) and real-time mining.  
+- 💵 **Balance Checking** — Query wallet balances based on blockchain history.  
 - 🖥️ **CLI Interface** — Simple command-line interface with interactive menus.
 
 ---
@@ -23,7 +23,7 @@ MineByte converter: https://bright-elf-2fde17.netlify.app/
 
 ### ✅ Prerequisites
 
-- Python 3.7 or higher
+- Python 3.7 or higher  
 - (Optional but recommended) Virtual environment
 
 ### 🔧 Installation
@@ -92,7 +92,7 @@ Mining rewards are credited to the miner’s wallet.
 Enter your wallet name to compute balance from all past transactions.
 
 📁 Project Structure
-plaintext
+bash
 Copy
 Edit
 minebyte/
@@ -133,9 +133,23 @@ minebyte/
 │   └── file_io.py                # JSON file handling
 │
 └── .gitignore
-🤝 Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests.
+⚠️ Disclaimer
+MineByte (MB) is an educational and local project designed to demonstrate and learn the basic principles of blockchain technology and mining.
 
+It is important to understand that:
+
+MineByte is currently not connected to any public network or official exchange.
+
+The value of MB coins has no market price and is defined solely by agreements between users within this system.
+
+MB is used exclusively within the local blockchain instance and does not guarantee liquidity or convertibility to real currencies.
+
+Any exchange of MineByte coins for real money takes place outside the system and by personal agreement between users.
+
+This project is not financial advice or an investment. Use responsibly and only for educational purposes.
+
+🤝 Contributing
+Contributions are welcome! Feel free to open issues or submit pull requests to improve the project.
 📜 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
