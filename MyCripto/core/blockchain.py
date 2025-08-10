@@ -133,3 +133,4 @@ class Blockchain:
         self.add_block(all_transactions)
 
         print(f"🎉 {miner_address} je uspešno izrudario blok i dobio {settings.MINING_REWARD} MB!")
+
