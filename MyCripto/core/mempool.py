@@ -1,5 +1,3 @@
-# core/mempool.py
-
 import os
 import json
 from config import settings
@@ -43,3 +41,18 @@ class Mempool:
 
     def get_transactions(self):
         return self.transactions
+
+    def has_transaction(self, tx_dict) -> bool:
+        """
+        Proverava da li data transakcija (tx_dict) već postoji u mempoolu.
+        Upoređuje po potpisu (signature) koji bi trebalo da bude jedinstven.
+        """
+        tx_signature = tx_dict.get("signature")
+        if not tx_signature:
+            return False
+
+        for tx in self.transactions:
+            if tx.get("signature") == tx_signature:
+                return True
+        return False
+
