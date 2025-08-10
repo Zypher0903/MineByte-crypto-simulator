@@ -151,3 +151,4 @@ class Miner:
                     print(f"🔄 Nonce tried: {nonce}")
 
                 nonce += 1
+
