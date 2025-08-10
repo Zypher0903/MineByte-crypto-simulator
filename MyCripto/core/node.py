@@ -9,6 +9,9 @@ import requests
 import time
 
 app = Flask(__name__)
+from core.mempool import Mempool
+print("Mempool class:", Mempool)
+print("Has attribute 'has_transaction'?", hasattr(Mempool, "has_transaction"))
 
 blockchain = Blockchain()
 mempool = Mempool()
@@ -28,11 +31,9 @@ def get_blockchain():
     } for block in blockchain.chain]
     return jsonify({"length": len(chain_data), "chain": chain_data})
 
-
 @app.route('/mempool', methods=['GET'])
 def get_mempool():
     return jsonify(mempool.get_transactions())
-
 
 @app.route('/transaction', methods=['POST'])
 def add_transaction():
@@ -57,7 +58,6 @@ def add_transaction():
         return jsonify({"message": "Transaction added to mempool"}), 201
     except Exception as e:
         return jsonify({"message": f"Error: {str(e)}"}), 400
-
 
 @app.route('/block', methods=['POST'])
 def add_block():
@@ -91,11 +91,9 @@ def add_block():
     except Exception as e:
         return jsonify({"message": f"Error: {str(e)}"}), 400
 
-
 @app.route('/peers', methods=['GET'])
 def get_peers():
     return jsonify(list(peers))
-
 
 @app.route('/add_peer', methods=['POST'])
 def add_peer():
@@ -107,7 +105,6 @@ def add_peer():
     else:
         return jsonify({"message": "Invalid peer or already exists"}), 400
 
-
 # ----------------- P2P helper functions -----------------
 
 def broadcast_transaction(tx):
@@ -117,14 +114,12 @@ def broadcast_transaction(tx):
         except:
             pass
 
-
 def broadcast_block(block):
     for peer in peers:
         try:
             requests.post(f"http://{peer}/block", json=block, timeout=3)
         except:
             pass
-
 
 def sync_chain():
     global blockchain
@@ -161,7 +156,6 @@ def sync_chain():
         blockchain.save_chain()
         print("[SYNC] Blockchain synchronized with peers")
 
-
 def sync_mempool():
     global mempool
     for peer in peers:
@@ -175,30 +169,17 @@ def sync_mempool():
         except:
             pass
 
-
 def run_sync_loop():
     while True:
         sync_chain()
         sync_mempool()
         time.sleep(10)
 
-
 # ----------------- Auto mining thread -----------------
 
 def run_auto_mining(miner_address):
     miner = Miner(miner_address)
-    while True:
-        if mempool.get_transactions():
-            print("[MINER] Mining new block...")
-            new_hash = miner.mine_pending_transactions()
-            if new_hash:
-                print(f"[MINER] Block mined with hash: {new_hash}")
-            else:
-                print("[MINER] No valid nonce found.")
-        else:
-            print("[MINER] No transactions to mine, sleeping...")
-        time.sleep(15)
-
+    miner.auto_mine()  # koristi tvoju funkciju sa rudarenjem i PoW
 
 if __name__ == '__main__':
     import sys
@@ -222,3 +203,5 @@ if __name__ == '__main__':
     threading.Thread(target=run_auto_mining, args=(miner_wallet.get_address(),), daemon=True).start()
 
     app.run(host='0.0.0.0', port=port)
+
+
