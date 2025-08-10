@@ -1,45 +1,46 @@
 💰 MineByte (MB) — CLI Cryptocurrency Wallet & Blockchain
-MineByte (MB) is a lightweight, educational cryptocurrency project implemented in Python. It demonstrates the core concepts of blockchain technology including wallets, transactions, mining, and a persistent blockchain system — all through a simple command-line interface.
+MineByte (MB) is a lightweight, educational cryptocurrency project implemented in Python. It demonstrates core blockchain concepts such as wallets, cryptographically signed transactions, mining, and a persistent blockchain, all through a user-friendly command-line interface.
 
 MineByte converter: https://bright-elf-2fde17.netlify.app/
-Discord server link: https://discord.gg/tz3JMEhj
+Discord server: https://discord.gg/tz3JMEhj
 
 🚀 Features
-🔐 Wallet Management — Create and load wallets with public/private key pairs.
+🔐 Wallet Management: Generate and load wallets using public/private key cryptography.
 
-🔁 Transactions — Send MB coins securely with cryptographic signatures.
+🔁 Secure Transactions: Send MB coins with cryptographic signatures ensuring authenticity.
 
-⛓️ Blockchain — Immutable, persistent blockchain stored as JSON.
+⛓️ Immutable Blockchain: Persistent JSON-based blockchain ensures transaction history integrity.
 
-⚒️ Mining — Proof-of-work mining with adjustable difficulty.
+⚒️ Proof-of-Work Mining: Adjustable difficulty mining validates transactions and secures the network.
 
-🧾 Mempool — Pool of pending transactions awaiting confirmation.
+🧾 Mempool: Transaction pool holding pending transactions before inclusion in blocks.
 
-⏱️ Multiple Mining Modes — Fast mining (instant nonce solving) and real-time mining.
+⏱️ Multiple Mining Modes: Supports fast mining (instant nonce) and realistic time-limited mining.
 
-💵 Balance Checking — Query wallet balances based on blockchain history.
+💵 Balance Queries: View wallet balances reflecting blockchain-confirmed transactions.
 
-🖥️ CLI Interface — Simple command-line interface with interactive menus.
+🖥️ Intuitive CLI: Interactive menus simplify wallet, transaction, and blockchain management.
 
-🌐 Distributed P2P Network — Nodes communicate over HTTP to synchronize blockchain and mempool.
+🌐 Distributed P2P Network: Multiple MineByte nodes can connect to form a decentralized network supporting cross-node transactions.
 
-🆕 What’s New — Network Node (node.py)
-MineByte now supports a distributed peer-to-peer network node implemented via Flask REST API, enabling multiple MineByte instances to interconnect and form a decentralized blockchain network.
+🆕 What’s New — Distributed Network Node (node.py)
+MineByte now includes a P2P network node implemented with a Flask REST API, enabling multiple instances to connect over HTTP and synchronize blockchain data and transactions.
 
-New capabilities with node.py:
-🌐 Peer-to-peer networking — Connect multiple nodes (peers) over HTTP.
+Key Enhancements:
+🌍 Decentralized Network: Nodes communicate to maintain a consistent blockchain.
 
-🔄 Blockchain & mempool synchronization — Nodes automatically sync their chains and transaction pools.
+🔄 Automatic Synchronization: Chains and mempools stay updated across nodes.
 
-💸 Transaction and block broadcasting — Transactions and newly mined blocks propagate through the network.
+📡 Broadcasting: Transactions and mined blocks propagate to all connected peers.
 
-⚡ Automated mining — Nodes can mine blocks automatically based on mempool contents.
+⚙️ Automated Mining: Nodes can mine transactions from their mempool automatically.
 
-🔍 REST API endpoints for inspecting blockchain state, mempool, peers, and submitting transactions or blocks.
+🛠️ REST API: Inspect blockchain status, mempool, connected peers, and submit transactions or blocks.
 
-🧰 How to Use node.py — Step by Step
-Start a node:
+🔗 Cross-node Transactions: Send MB coins securely from wallets on one node to wallets on another seamlessly.
 
+🧰 Usage Guide — Running and Using Nodes
+1. Start a Node
 bash
 Copy
 Edit
@@ -49,89 +50,97 @@ Example:
 bash
 Copy
 Edit
-python core/node.py 5000 my_miner_wallet
-Connect nodes (peers):
+python core/node.py 5000 miner_wallet
+This starts a MineByte node listening on port 5000, using miner_wallet for mining rewards.
 
-Add peers by sending a POST request to /add_peer endpoint:
+2. Connect Nodes (Add Peers)
+To form a network, nodes must be connected as peers.
+
+Use the /add_peer endpoint to connect nodes:
 
 bash
 Copy
 Edit
 curl -X POST http://localhost:5000/add_peer -H "Content-Type: application/json" -d '{"peer":"localhost:5001"}'
-Create or load wallets:
+Repeat on other nodes with appropriate addresses to build a mesh network.
 
-Use the CLI interface (app/main.py) or API to manage wallets.
+3. Create or Load Wallets
+Manage wallets on any node through the CLI (app/main.py) or via API endpoints.
 
-Send transactions:
+4. Sending MB Coins Across the Network
+Via CLI:
+Choose Send Coins and input:
 
-Send MB coins via CLI or HTTP POST /transaction. Transactions propagate across all nodes.
+Sender wallet name
 
-Mining:
+Recipient wallet address (can be from any node)
 
-Nodes mine blocks manually (via CLI) or automatically if configured with a miner wallet.
+Amount of MB to send
 
-Check balances:
+Via API:
+Submit transaction data as JSON to the /transaction endpoint on any node.
 
-Query the blockchain state at any node to check wallet balances.
+Transactions are broadcasted to all peers and pooled for mining.
 
-💸 How to Send and Use MineByte (MB)
-Creating wallets:
-Use the CLI to generate wallets with secure cryptographic key pairs.
+5. Mining Transactions
+Mine blocks manually via CLI or enable automated mining on nodes with a miner wallet.
 
-Sending MB coins:
+Mining confirms transactions network-wide by adding them to the blockchain.
 
-Via CLI: Select the send option, enter sender wallet, recipient wallet address, and amount.
+6. Checking Balances
+Query any node to check wallet balances, which reflect the network’s confirmed blockchain state.
 
-Via API: Submit transaction data with sender, recipient, amount, and signature to /transaction.
+🔍 What You Can Do Now
+Deploy multiple MineByte nodes on different machines or ports to create a decentralized blockchain network.
 
-Transaction confirmation:
-Transactions enter the mempool, then are included in newly mined blocks, confirming the transfer.
+Securely transfer MB coins between wallets anywhere within the connected network.
 
-Checking balances:
-Balances are derived from confirmed transactions recorded on the blockchain.
+Enjoy automatic transaction validation, mempool sharing, and synchronized mining.
 
-Using MB for exchange:
-MB coins currently have no official market value. Users can agree externally to trade MB for goods or services. Transactions are securely recorded on the blockchain to prevent fraud.
+Use REST APIs to monitor blockchain data, mempool contents, and peer connections.
+
+📅 Future Plans
+🔄 Automatic peer discovery for easy network scaling.
+
+🔐 Secure, encrypted communications between nodes.
+
+📱 User-friendly frontends (web/desktop) for easier wallet and node management.
+
+⛓️ Advanced consensus algorithms for increased security.
+
+🔗 Cross-chain interoperability and external integrations.
+
+🧪 Testnets and network simulators for development.
 
 🧰 Getting Started
-✅ Prerequisites
-Python 3.7 or higher
+Prerequisites
+Python 3.7+
 
-(Optional) Virtual environment recommended
+(Recommended) Virtual environment
 
-🔧 Installation
-Clone the repository:
-
+Installation
 bash
 Copy
 Edit
 git clone https://github.com/Zypher0903/minebyte.git
 cd minebyte
-(Optional) Create and activate a virtual environment:
-
-bash
-Copy
-Edit
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-Install dependencies (if any):
-
-bash
-Copy
-Edit
+# Activate environment
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 ▶️ Running the CLI Wallet
-Start the wallet interface with:
+Launch the wallet interface:
 
 bash
 Copy
 Edit
 python app/main.py
-You will see a menu with options to:
+Interact with the menu to:
 
-Create wallets
+Create/load wallets
 
-Send coins
+Send MB coins
 
 View the blockchain
 
@@ -141,25 +150,24 @@ Check balances
 
 Exit
 
-⚠️ Disclaimer
-MineByte (MB) is an educational and local project designed to demonstrate the principles of blockchain technology and mining.
+⚠️ Important Disclaimer
+MineByte is an educational project for learning blockchain fundamentals.
 
-MineByte is not connected to any public blockchain or exchange.
+Not connected to public blockchains or exchanges.
 
-MB coins have no market price and no guaranteed liquidity.
+MB coins have no real-world market value or guaranteed liquidity.
 
-MB is used only within this local blockchain network.
+Any real-money exchanges are outside this system and subject to personal agreement.
 
-Any real-world exchange of MB coins must be done outside this system by personal agreement.
-
-This project is not financial advice or an investment. Use responsibly and for educational purposes only.
+Not financial advice — use responsibly and for education only.
 
 🤝 Contributing
-Contributions are welcome! Please open issues or submit pull requests to improve MineByte.
+Contributions, bug reports, and feature requests are welcome! Please open issues or pull requests.
 
 📜 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+Licensed under the MIT License. See LICENSE for details.
 
 🙏 Acknowledgements
-Inspired by Bitcoin and educational blockchain demos.
+Inspired by Bitcoin and educational blockchain projects.
 Created by [Zypher0903].
+
