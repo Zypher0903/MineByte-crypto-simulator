@@ -1,28 +1,67 @@
-# utils/crypto_utils.py
+import os
+import json
+import utils.crypto_utils as crypto_utils
+from config import settings
 
-import hashlib
-import ecdsa
-import base64
 
-def sha256(data: str) -> str:
-    return hashlib.sha256(data.encode()).hexdigest()
+def _get_data_path() -> str:
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    data_dir = os.path.join(base_dir, "data")
+    os.makedirs(data_dir, exist_ok=True)
+    return os.path.join(data_dir, "wallets.json")
 
-def generate_keys():
-    private_key = ecdsa.SigningKey.generate(curve=ecdsa.SECP256k1)
-    public_key = private_key.get_verifying_key()
-    return (
-        private_key.to_string().hex(),
-        public_key.to_string().hex()
-    )
 
-def sign_data(private_key_hex: str, data: str) -> str:
-    sk = ecdsa.SigningKey.from_string(bytes.fromhex(private_key_hex), curve=ecdsa.SECP256k1)
-    signature = sk.sign(data.encode())
-    return base64.b64encode(signature).decode()
+class Wallet:
+    def __init__(self, wallet_name: str):
+        self.wallet_name = wallet_name
+        self.wallet_file = _get_data_path()
+        self.wallets = self._load_wallets()
 
-def verify_signature(public_key_hex: str, data: str, signature_b64: str) -> bool:
-    try:
-        vk = ecdsa.VerifyingKey.from_string(bytes.fromhex(public_key_hex), curve=ecdsa.SECP256k1)
-        return vk.verify(base64.b64decode(signature_b64), data.encode())
-    except:
-        return False
+        self.private_key = None
+        self.public_key = None
+        self.balance = 0
+
+        if wallet_name in self.wallets:
+            data = self.wallets[wallet_name]
+            self.private_key = data["private_key"]
+            self.public_key = data["public_key"]
+            self.balance = data["balance"]
+        else:
+            self._create_wallet()
+
+    def _load_wallets(self) -> dict:
+        if not os.path.exists(self.wallet_file):
+            with open(self.wallet_file, "w") as f:
+                json.dump({}, f)
+            return {}
+        with open(self.wallet_file, "r") as f:
+            content = f.read().strip()
+            return json.loads(content) if content else {}
+
+    def _save_wallets(self):
+        self.wallets[self.wallet_name] = {
+            "private_key": self.private_key,
+            "public_key": self.public_key,
+            "balance": self.balance
+        }
+        with open(self.wallet_file, "w") as f:
+            json.dump(self.wallets, f, indent=4)
+
+    def _create_wallet(self):
+        self.private_key, self.public_key = crypto_utils.generate_keys()
+        self.balance = settings.INITIAL_BALANCE
+        self._save_wallets()
+
+    def get_address(self) -> str:
+        return self.public_key
+
+    def get_balance(self) -> float:
+        return self.balance
+
+    def sign_message_str(self, message: str) -> str:
+        """
+        Potpiši string poruku koristeći privatni ključ.
+        """
+        signature = crypto_utils.sign_message(self.private_key, message)
+        return signature
+
